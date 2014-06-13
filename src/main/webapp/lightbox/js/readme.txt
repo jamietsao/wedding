@@ -1,0 +1,1 @@
+Using latest Prototype (1.6.0) and script.aculo.us (1.8.0) versions, located under main /js directory.

@@ -1,0 +1,56 @@
+<?php
+  // check if the form is submitted
+  if(isset($_POST['save']))
+  {
+    // connect to database
+    include 'db/config.php';
+    include 'db/opendb.php';
+
+    // get the input from $_POST variable
+    // trim all input to remove extra spaces
+    $name    = trim($_POST['name']);
+    $location   = trim($_POST['location']);
+    $message = trim($_POST['message']);
+
+    // escape the message
+    if(!get_magic_quotes_gpc())
+    {
+      $name = addslashes($name);
+      $location = addslashes($location);
+      $message = addslashes($message);
+    }
+
+    // insert guestbook entry
+    $query = "INSERT INTO guestbook (name, location, message, date) " .
+             "VALUES ('$name', '$location', '$message', current_date)";
+    mysql_query($query) or die('Error -- insert failed. ' . mysql_error());
+
+    // get inserted guestbook entry id
+    $entryId = mysql_insert_id();
+
+    // query inserted entry
+    $query = "SELECT id,  name, location, message, DATE_FORMAT(date, '%b %d, %Y') FROM guestbook WHERE id = " . $entryId;
+    $result = mysql_query($query) or die('Error -- query failed: ' . mysql_error());
+
+    // close database
+    include 'db/closedb.php';
+
+    $row = mysql_fetch_row($result);
+    list($id, $name, $location, $message, $date) = $row;
+
+    // change all HTML special characters to prevent some nasty code injection
+    $name = htmlspecialchars($name);
+    $message = htmlspecialchars($message);
+    // convert newline characters to HTML break tag ( <br> )
+    $message = nl2br($message);
+?>
+    <p class="post-body">
+      <?php echo $message; ?>
+    <p>
+    <p class="post-footer align-right">
+      <span class="person">Posted by <?php echo $name; ?><?php echo ($location == '' ? '' : ' - '.$location) ?></span>
+      <span class="date"><?php echo $date; ?></span>
+    </p>
+<?php
+  } // end if
+?>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>ranee and jamie</title>
+    <link rel="stylesheet" href="css/wedding.css" type="text/css" />
+    <link rel="stylesheet" href="litebox/css/lightbox.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/wedding.js"></script>
+    <script type="text/javascript" src="js/prototype.js"></script>
+    <!-- prototype.lite.js conflicts with prototype.js, so use original library
+    <script type="text/javascript" src="litebox/js/prototype.lite.js"></script>
+     -->
+    <script type="text/javascript" src="litebox/js/moo.fx.js"></script>
+    <script type="text/javascript" src="litebox/js/litebox-1.0.js"></script>
+  </head>
+
+  <body onload="initLightbox()">
+    <div id="wrap">
+      <?php
+        // include header & menu
+        $_GET['current'] = 'welcome';
+        include("include_header.html");
+        include("include_menu.html");
+      ?>
+      <div id="content-wrap">
+        <div id="content">
+          <div id="main">
+            <div class="title"><img src="images/title_faq.gif" /></div>
+            <p class="question">
+            Q. What the hell does "Island Cocktail Attire" mean?
+            </p>
+            <p class="answer">
+            A. It means whatever the hell you want fool!!
+            </p>
+            <p class="question">
+            Q. What will the weather be like in June?
+            </p>
+            <p class="answer">
+            A. Hot fool hot!!
+            </p>
+          </div>
+        </div>
+      </div>
+      <?php
+        // include footer
+        include("include_footer.html");
+      ?>
+    </div>
+    <?php
+      // include google analytics
+      include("include_google_analytics.html");
+    ?>
+  </body>
+</html>

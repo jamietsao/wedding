@@ -1,0 +1,29 @@
+<?php
+  // check if the form is submitted
+  if(isset($_POST['save']))
+  {
+    // connect to database
+    include 'db/config.php';
+    include 'db/opendb.php';
+
+    // get the input from $_POST variable
+    // trim all input to remove extra spaces
+    $name    = trim($_POST['name']);
+    $attending   = trim($_POST['attending']);
+    $entree = trim($_POST['entree']);
+
+    // escape the message
+    if(!get_magic_quotes_gpc())
+    {
+      $name = addslashes($name);
+    }
+
+    // insert rsvp entry
+    $query = "INSERT INTO rsvp (name, attending, entree, date) " .
+             "VALUES ('$name', '$attending', '$entree', now())";
+    mysql_query($query) or die('Error -- insert failed. ' . mysql_error());
+
+    // close database
+    include 'db/closedb.php';
+  }
+?>
