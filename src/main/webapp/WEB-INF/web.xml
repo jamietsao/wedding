@@ -4,15 +4,76 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-	<servlet>
-		<servlet-name>Wedding</servlet-name>
-		<servlet-class>com.jamietsao.wedding.WeddingServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Wedding</servlet-name>
-		<url-pattern>/wedding</url-pattern>
-	</servlet-mapping>
-	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-	</welcome-file-list>
+  <servlet>
+    <servlet-name>Wedding</servlet-name>
+    <servlet-class>com.jamietsao.wedding.WeddingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Wedding</servlet-name>
+    <url-pattern>/wedding</url-pattern>
+  </servlet-mapping>
+  
+  <!--  Welcome page -->
+  <servlet>
+    <servlet-name>welcome</servlet-name>
+    <jsp-file>/welcome.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>welcome</servlet-name>
+    <url-pattern>/welcome</url-pattern>
+  </servlet-mapping>
+
+  <!--  Our Story page -->
+  <servlet>
+    <servlet-name>our-story</servlet-name>
+    <jsp-file>/our_story.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>our-story</servlet-name>
+    <url-pattern>/our-story</url-pattern>
+  </servlet-mapping>
+
+  <!--  Wedding Details page -->
+  <servlet>
+    <servlet-name>wedding-details</servlet-name>
+    <jsp-file>/wedding_details.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>wedding-details</servlet-name>
+    <url-pattern>/wedding-details</url-pattern>
+  </servlet-mapping>
+
+  <!--  Wedding Party page -->
+  <servlet>
+    <servlet-name>wedding-party</servlet-name>
+    <jsp-file>/wedding_party.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>wedding-party</servlet-name>
+    <url-pattern>/wedding-party</url-pattern>
+  </servlet-mapping>
+
+  <!--  Registry page -->
+  <servlet>
+    <servlet-name>registry</servlet-name>
+    <jsp-file>/registry.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>registry</servlet-name>
+    <url-pattern>/registry</url-pattern>
+  </servlet-mapping>
+  
+  <!--  Guest Book page -->
+  <servlet>
+    <servlet-name>guestbook</servlet-name>
+    <jsp-file>/guestbook.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>guestbook</servlet-name>
+    <url-pattern>/guestbook</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
 </web-app>
