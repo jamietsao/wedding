@@ -16,12 +16,6 @@
 
   <body onload="initLightbox()">
     <div id="wrap">
-      <!--
-        // include header & menu
-        $_GET['current'] = 'welcome';
-        include("include_header.html");
-        include("include_menu.html");
-      -->
       <jsp:include page="include_header.jsp">
         <jsp:param name="currentPage" value="welcome" />
       </jsp:include>
@@ -51,15 +45,8 @@
           </div>
         </div>
       </div>
-      <!--   
-        // include footer
-        include("include_footer.html");
-      -->
       <jsp:include page="include_footer.jsp" />
     </div>
-    <!--  
-      // include google analytics
-      include("include_google_analytics.html");
-    -->
+    <jsp:include page="include_google_analytics.jsp" />
   </body>
 </html>

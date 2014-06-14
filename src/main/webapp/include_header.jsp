@@ -31,7 +31,7 @@
 
 <div id="header">
   <div id="logo-box">
-    <h1 id="logo"><a href="index.html" title="">ranee & jamie</a></h1>
+    <h1 id="logo"><a href="/" title="">ranee & jamie</a></h1>
     <h2 id="slogan"></h2>
   </div>
   <div class="headerphoto">

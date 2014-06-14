@@ -206,9 +206,6 @@
       </div>
       <jsp:include page="include_footer.jsp" />
     </div>
-    <!--
-      // include google analytics
-      include("include_google_analytics.html");
-    -->
+    <jsp:include page="include_google_analytics.jsp" />
   </body>
 </html>

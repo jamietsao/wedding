@@ -29,11 +29,11 @@
             <br />
             <div class="registry-links">
               We are registered at the following stores:<br /><br />
-              <a href="http://www.crateandbarrel.com/gr/guest/viewRegistry.aspx?grid=3606430" target="newWindow"><img src="images/registry_crate_logo.gif"></a>
+              <img src="images/registry_crate_logo.gif" />
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="http://macys.weddingchannel.com/gvr/guestregistrydetail.action?retailer_registry_uid=304985920&listby=dept" target="newWindow"><img src="images/registry_macys_logo.jpg"></a>
+              <img src="images/registry_macys_logo.jpg" />
               <br /><br />
-              <a href="http://www.bedbathandbeyond.com/regGiftRegistry.asp?order_num=-1&wrn=%2D2092913967" target="newWindow"><img style="padding:10px" src="images/registry_bedbath_logo.gif"></a>
+              <img style="padding:10px" src="images/registry_bedbath_logo.gif" />
             </div>
             <br />
           </div>
@@ -41,9 +41,6 @@
       </div>
       <jsp:include page="include_footer.jsp" />
     </div>
-    <!--
-      // include google analytics
-      include("include_google_analytics.html");
-    -->
+    <jsp:include page="include_google_analytics.jsp" />
   </body>
 </html>
