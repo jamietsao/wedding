@@ -4,15 +4,7 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-  <servlet>
-    <servlet-name>Wedding</servlet-name>
-    <servlet-class>com.jamietsao.wedding.WeddingServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Wedding</servlet-name>
-    <url-pattern>/wedding</url-pattern>
-  </servlet-mapping>
-  
+
   <!--  Welcome page -->
   <servlet>
     <servlet-name>welcome</servlet-name>
@@ -66,7 +58,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <!--  Guest Book page -->
   <servlet>
     <servlet-name>guestbook</servlet-name>
-    <jsp-file>/guestbook.jsp</jsp-file>
+    <servlet-class>com.jamietsao.wedding.servlet.GuestbookServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>guestbook</servlet-name>

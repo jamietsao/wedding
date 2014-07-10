@@ -1,15 +1,5 @@
-<?php
-  // connect to database
-  include 'db/config.php';
-  include 'db/opendb.php';
-
-  // query all guestbook entries
-  $query = "SELECT id,  name, location, message, DATE_FORMAT(date, '%b %d, %Y') FROM guestbook ORDER BY id DESC ";
-  $result = mysql_query($query) or die('Error -- query failed: ' . mysql_error());
-
-  // close database
-  include 'db/closedb.php';
-?>
+<%@page import="com.jamietsao.wedding.model.GuestbookEntry"%>
+<%@page import="java.util.Iterator"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -45,7 +35,7 @@
                 <input id="guestbook-toggle" type="button" class="button" value="Sign Guest Book" onclick="toggleGuestbookForm()" />
               </p>
               <div id="guestbook-form-div">
-                <form id="guestbook-form" method="POST" action="">
+                <form id="guestbook-form" method="post" action="">
                   <p>
                     <label>Name</label>
                     <input id="name" name="name" type="text" size="30" maxlength="100" />
@@ -54,7 +44,7 @@
                     <label>Message</label>
                     <textarea id="message" name="message"></textarea>
                     <br />
-                    <input type="button" class="button" name="save" value="Done" onclick="saveGuestbookEntry('guestbook_insert.html', 'entries')" />
+                    <input type="button" class="button" name="save" value="Done" onclick="saveGuestbookEntry('/guestbook', 'entries')" />
                   </p>
                 </form>
                 <script type="text/javascript">
@@ -62,28 +52,21 @@
                 </script>
               </div>
               <div id='entries'>
-                <?php
-                  // loop through the entries
-                  while($row = mysql_fetch_array($result)) {
-                    // store each column in variables
-                    list($id, $name, $location, $message, $date) = $row;
-                    // change all HTML special characters to prevent some nasty code injection
-                    $name = htmlspecialchars($name);
-                    $message = htmlspecialchars($message);
-                    // convert newline characters to HTML break tag ( <br> )
-                    $message = nl2br($message);
-                    // display guestbook entry
-                ?>
+              <% 
+                  Iterator<GuestbookEntry> iter = (Iterator<GuestbookEntry>) request.getAttribute("entries");
+                  while (iter.hasNext()) {
+                      GuestbookEntry entry = iter.next();
+              %>
                 <p class="post-body">
-                  <?php echo $message; ?>
-                <p>
-                <p class="post-footer align-right">
-                  <span class="person">Posted by <?php echo $name; ?><?php echo ($location == '' ? '' : ' - '.$location) ?></span>
-                  <span class="date"><?php echo $date; ?></span>
+                  <%= entry.getMessageForDisplay() %>
                 </p>
-                <?php
-                  } // end while
-                ?>
+                <p class="post-footer align-right">
+                  <span class="person">Posted by <%= entry.getNameForDisplay() %><%= entry.getLocationForDisplay() %></span>
+                  <span class="date"><%= entry.getDate() %></span>
+                </p>
+                <%
+                    } // end while
+                %>
               </div>
             </div>
           </div>
