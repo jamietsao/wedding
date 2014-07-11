@@ -12,7 +12,7 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
 import com.jamietsao.wedding.model.GuestbookEntry;
 
 /**
- * JDBI SQL Object for the guestbook table
+ * JDBI SQL Object for the 'guestbook' table
  * 
  * @author jamietsao
  */

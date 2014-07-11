@@ -54,8 +54,18 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     <servlet-name>registry</servlet-name>
     <url-pattern>/registry</url-pattern>
   </servlet-mapping>
+
+  <!--  RSVP page -->
+  <servlet>
+    <servlet-name>rsvp</servlet-name>
+    <servlet-class>com.jamietsao.wedding.servlet.RSVPServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>rsvp</servlet-name>
+    <url-pattern>/rsvp</url-pattern>
+  </servlet-mapping>
   
-  <!--  Guest Book page -->
+  <!--  Guestbook page -->
   <servlet>
     <servlet-name>guestbook</servlet-name>
     <servlet-class>com.jamietsao.wedding.servlet.GuestbookServlet</servlet-class>

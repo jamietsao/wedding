@@ -83,7 +83,7 @@ RSVP page
 
 ************/
 
-function rsvp(url, divId) {
+function rsvp(url) {
   // validate form first
   if (!validateRSVPForm()) {
     return;
@@ -98,8 +98,6 @@ function rsvp(url, divId) {
                                  {
                                     // hide form
                                     hideRSVPForm();
-                                    // put newly inserted entry on top
-                                    //$(divId).insert({top : transport.responseText});
                                  },
                       // Set the correct header in order to avoid caching in IE
                       requestHeaders: ["If-Modified-Since", "Thu, 1 Jan 1970 00:00:00 GMT"]

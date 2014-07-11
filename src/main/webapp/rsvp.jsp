@@ -17,12 +17,12 @@
 
   <body onload="initLightbox()">
     <div id="wrap">
-      <?php
-        // include header & menu
-        $_GET['current'] = 'rsvp';
-        include("include_header.html");
-        include("include_menu.html");
-      ?>
+      <jsp:include page="include_header.jsp">
+        <jsp:param name="currentPage" value="rsvp" />
+      </jsp:include>
+      <jsp:include page="include_menu.jsp">
+        <jsp:param name="currentPage" value="rsvp" />
+      </jsp:include>
       <div id="content-wrap">
         <div id="content">
           <div id="main">
@@ -50,7 +50,7 @@
             </div>
             <div class="rsvp">
               <div id="rsvp-form-div">
-                <form id="rsvp-form" method="POST" action="rsvp_insert.html">
+                <form id="rsvp-form" method="post">
                   <p>
                     <center>
                     <b><i>
@@ -72,7 +72,7 @@
                     <label>Dinner Entree:</label><input id="chicken_entree" name="entree" type="radio" value="C" /><span style="margin: 0px 5px 0px 5px"><b>Beef and Chicken</b></span><input id="fish_entree" name="entree" type="radio" value="S" /><span style="margin: 0px 5px 0px 5px"><b>Beef and Fish</b></span><br />
                   </p>
                   <p>
-                    <input type="button" class="button" name="save" value="RSVP" onclick="rsvp('rsvp_insert.html', 'rsvp-message')" />
+                    <input type="button" class="button" name="save" value="RSVP" onclick="rsvp('/rsvp')" />
                   </p>
                 </form>
               </div>
@@ -85,14 +85,8 @@
           </div>
         </div>
       </div>
-      <?php
-        // include footer
-        include("include_footer.html");
-      ?>
+      <jsp:include page="include_footer.jsp" />
     </div>
-    <?php
-      // include google analytics
-      include("include_google_analytics.html");
-    ?>
+    <jsp:include page="include_google_analytics.jsp" />
   </body>
 </html>
