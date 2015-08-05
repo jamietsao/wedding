@@ -56,13 +56,8 @@
               </div>
               <div class="wedding-party-member">
                 <div class="wedding-party-title">Maid of Honor</div>
-                <a href="images/janine_01.jpg" rel="lightbox[janine]" title="Sisters surrounded by New Year's Eve bubbles"><img src="images/janine_01_small.jpg" title="click me!"  /></a>
+                <a href="" rel="lightbox[janine]" title=""><img src="" title="" /></a>
                 <div style="display:none">
-                  <!--
-                  <a href="images/janine_02.jpg" rel="lightbox[janine]" title="The Tiens at their best"></a>
-                  -->
-                  <a href="images/janine_03.jpg" rel="lightbox[janine]" title="Foodies at heart"></a>
-                  <a href="images/janine_04.jpg" rel="lightbox[janine]" title="Janine and Garrett celebrating Ranee's 30th"></a>
                 </div>
                 <p class="wedding-party-name">Janine Tien</p>
               </div>
