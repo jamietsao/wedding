@@ -56,7 +56,7 @@
               </div>
               <div class="wedding-party-member">
                 <div class="wedding-party-title">Maid of Honor</div>
-                <a href="" rel="lightbox[janine]" title=""><img src="" title="" /></a>
+                <a href="#" rel="lightbox[janine]" title=""><img width="120px" height="90px" /></a>
                 <div style="display:none">
                 </div>
                 <p class="wedding-party-name">Janine Tien</p>
