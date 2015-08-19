@@ -44,12 +44,8 @@
               </div>
               <div class="wedding-party-member">
                 <div class="wedding-party-title">Officiant</div>
-                <a href="images/garrett_01.jpg" rel="lightbox[garrett]" title="Birthday with the sisters"><img src="images/garrett_01_small.jpg" title="click me!"  /></a>
+                <a href="images/garrett_03.jpg" rel="lightbox[garrett]" title="Posing as Japanese tourists in Hawaii"><img src="images/garrett_01_small.jpg" title="click me!"  /></a>
                 <div style="display:none">
-                  <!--
-                  <a href="images/garrett_02.jpg" rel="lightbox[garrett]" title="With his boys"></a>
-                  -->
-                  <a href="images/garrett_03.jpg" rel="lightbox[garrett]" title="Posing as Japanese tourists in Hawaii"></a>
                   <a href="images/garrett_04.jpg" rel="lightbox[garrett]" title="The Tiens"></a>
                 </div>
                 <p class="wedding-party-name">Garrett Tien</p>
